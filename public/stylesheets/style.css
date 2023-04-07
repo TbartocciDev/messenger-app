@@ -1,5 +1,7 @@
 body {
-  padding: 50px;
+  margin: 0;
+  height: 100%;
+  width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: royalblue;
 }
@@ -7,8 +9,24 @@ body {
 a {
   color: #00B7FF;
 }
+.nav-bar {
+  height: 10%;
+  background-color: black;
+}
 
 .google-logo {
   height: 30px;
   aspect-ratio: 1/1;
+}
+
+.logged-in {
+  background-color: green;
+  height: 80vh;
+  width: 100%;
+}
+
+.logged-out {
+  background-color: red;
+  height: 80vh;
+  width: 100%;
 }
