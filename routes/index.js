@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', style: '/stylesheets/start-screen.css' });
 });
 
 // Google OAuth login route
@@ -15,15 +15,14 @@ router.get('/auth/google', passport.authenticate(
     // Requesting the user's profile and email
     scope: ['profile', 'email'],
     // Optionally force pick account every time
-    // prompt: "select_account"
+    prompt: "select_account"
   }
 ));
-
 // Google OAuth callback route
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/',
+    successRedirect: '/chats',
     failureRedirect: '/'
   }
 ));

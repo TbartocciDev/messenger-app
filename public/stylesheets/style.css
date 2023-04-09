@@ -9,24 +9,12 @@ body {
 a {
   color: #00B7FF;
 }
-.nav-bar {
-  height: 10%;
-  background-color: black;
+
+.login-btn {
+
 }
 
 .google-logo {
   height: 30px;
   aspect-ratio: 1/1;
-}
-
-.logged-in {
-  background-color: green;
-  height: 80vh;
-  width: 100%;
-}
-
-.logged-out {
-  background-color: red;
-  height: 80vh;
-  width: 100%;
 }

@@ -12,7 +12,8 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var chatsRouter = require('./routes/chats');
+var accountRouter = require('./routes/account')
 
 var app = express();
 
@@ -42,7 +43,8 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/chats', chatsRouter);
+app.use('/', accountRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

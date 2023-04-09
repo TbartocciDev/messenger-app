@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .login-btn {
+    background-color: rgb(5, 10, 45);
+    margin-top: 70vh;
+    height: 15vmin;
+    width: 60vmin;
+  }
+
+  .google-logo {
+    height: 30px;
+    aspect-ratio: 1/1;
+  }

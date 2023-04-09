@@ -1,2 +1,13 @@
 <%- include('./partials/header') %>
+    <% if (user) { %>
+      <!-- SHOW CONTINUE -->
+      <a href="/logout">LOG OUT</a>
+      <div class="user-info"><%= user.name%></div>
+      <div class="user-info"><%= user.email%></div>
+      <div class="user-info"><%= user.googleId%></div>
+    <% } else { %>
+      <!-- SHOW LOG IN  -->
+        <a href="/auth/google" class="login-btn">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" class="google-logo"></a>
+    <% } %>
+    <script src="javascripts/start-screen.js" type="text/javascript"></script>
 <%- include('./partials/footer') %>
