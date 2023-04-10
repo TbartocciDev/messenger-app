@@ -3,7 +3,7 @@ body {
     height: 100%;
     width: 100%;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: rgb(7, 172, 13);
+    background-color: rgb(195, 207, 116);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,4 +12,12 @@ body {
   .google-logo {
     height: 30px;
     aspect-ratio: 1/1;
+  }
+
+  .user-message {
+    color: blue;
+  }
+  
+  .other-message {
+    color: maroon;
   }

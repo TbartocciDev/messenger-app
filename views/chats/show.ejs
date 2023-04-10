@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+    <link rel='stylesheet' href='/stylesheets/chats/show.css' class="page-style" />
+        <nav class="nav-bar">
+            <a href="/logout">LOG OUT</a> | <a href="">Chat Info</a>
+        </nav>
+        <h1><%= chat.name %></h1>
+        <a href="/chats">Return to chats</a>
+        <br><br>
+        <% chat.messages.forEach(function(m) { %>
+            <% if (m.senderId === account.googleId) { %>
+                <h3 class="user-message"><%=m.text%> ~ <%=account.displayName%></h3>
+            <% } else { %>
+                <h3 class="other-message"><%=m.text%> ~ <%=account.displayName%></h3>
+            <% } %>
+        <% }) %>
+        <form class="create-message" method="POST" action="/chats/<%= chat._id %>/messages">
+            <label>New Message:</label>
+            <input type="text" name="text">
+            <br>
+            <input type="submit" value="Send Message">
+        </form>
+    <script src="javascripts/chats/show.js" type="text/javascript"></script>
+<%- include('../partials/footer') %>

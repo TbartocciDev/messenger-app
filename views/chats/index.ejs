@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<link rel='stylesheet' href='/stylesheets/chats/index.css' class="page-style" />
+
+<nav class="nav-bar">
+    <a href="/logout">LOG OUT</a> | <a href="account/<%=account._id%>">MY ACCOUNT</a>
+</nav>
+<h1>Welcome back, <%= account.displayName %></h1>
+<% chats.forEach(function(chat) { %>
+    <a href="chats/<%=chat._id%>"><%= chat.name %></a>
+<% }) %>
+
+<script src="javascripts/chats/index.js" type="text/javascript"></script>
+<%- include('../partials/footer') %>

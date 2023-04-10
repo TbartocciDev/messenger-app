@@ -11,7 +11,8 @@ const accountSchema = new Schema({
         required: true
     },
     fullName: {
-        type: String
+        type: String,
+        required: true
     },
     displayName: {
         type: String,
@@ -21,4 +22,4 @@ const accountSchema = new Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('Account', accountSchema);
+module.exports = mongoose.model('Account',accountSchema)

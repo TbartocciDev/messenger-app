@@ -7,6 +7,8 @@ const checkForAccount = require('../config/checkForAccount');
 
 router.get('/', ensureLoggedIn, checkForAccount, chatsCtrl.index)
 
-router.get('/messages', chatsCtrl.show)
+router.get('/:id', ensureLoggedIn, chatsCtrl.show)
+
+router.get('/:id/info', ensureLoggedIn, chatsCtrl.info)
 
 module.exports = router;

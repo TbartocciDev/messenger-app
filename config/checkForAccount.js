@@ -2,11 +2,13 @@ const Account = require('../models/account')
 
 module.exports = async function(req,res,next) {
     const accounts = await Account.find({})
-    console.log('Looking for sccount')
+    let accontExists = false 
     accounts.forEach(function(a) {
-        if (req.userId === a.googleId) {
-            return next()
+        if (req.user.googleId === a.googleId) {
+            accontExists = true
         }
     })
-    res.redirect('/create-account')
+
+    if (accontExists) return next()
+    res.redirect('/account/new')
 }
