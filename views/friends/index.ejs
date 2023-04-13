@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<link rel='stylesheet' href='/stylesheets/friends/index.css' class="page-style" />
+<nav class="nav-bar">
+    <a href="/chats">CHAT ROOMS</a> | <a href="/account/<%=account._id%>/friends" class="selected">FRIENDS</a> | 
+    <a href="/account/<%=account._id%>">MY ACCOUNT</a> | <a href="/logout">LOG OUT</a>
+</nav>
+<div class="holder">
+    <h1>Friends List:</h1>
+    <input type="text" class="friend-search-bar" placeholder="Enter friend code">
+    <div class="friend-search-btn"><p>Look for a friend</p></div>
+    <form class="find-friend" action="account/<%=account._id%>/friends">
+    <input type="text" name="code" placeholder="Enter friend code" required>
+    <br>
+    <input type="submit" value="Look for friend">
+</form>
+</div>
+<script src="/javascripts/friends/index.js" type="text/javascript"></script>
+<%- include('../partials/footer') %>

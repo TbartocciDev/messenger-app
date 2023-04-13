@@ -1,13 +1,17 @@
 <%- include('../partials/header') %>
 <link rel='stylesheet' href='/stylesheets/account/show.css' class="page-style" />
-<a href="/logout">LOG OUT</a> | <a href="/chats"> Back to chats</a>
-<form class="create-account-form" method="POST" action="/account/<%=account._id%>?_method=PUT">
-    <label>Display Name:</label>
+<nav class="nav-bar">
+    <a href="/chats">CHAT ROOMS</a> | <a href="/account/<%=account._id%>/friends">FRIENDS</a> | 
+    <a href="/account/<%=account._id%>" class="selected">MY ACCOUNT</a> | <a href="/logout">LOG OUT</a>
+</nav>
+<form class="account-form" method="POST" action="/account/<%=account._id%>?_method=PUT" autocomplete="off">
+    <h1>Account Settings</h1>
+    <h3>Your Unique ID is:</h3>
+    <p><%= account.userId %></p>
+    <br>
+    <h3>Display Name:</h3>
     <input type="text" name="displayName" value="<%= account.displayName %>">
     <br>
-    <label>Your Unique ID is:</label>
-    <label><%= account.userId %></label>
-    <br>
-    <input type="submit" value="Save Changes and return">
+    <input type="submit" value="Save Changes" class="btn">
 </form>
 <%- include('../partials/footer') %>

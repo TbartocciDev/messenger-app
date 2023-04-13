@@ -1,4 +1,21 @@
 <%- include('../partials/header') %>
 <link rel='stylesheet' href='/stylesheets/chats/info.css' class="page-style" />
-Chat info
+<nav class="nav-bar">
+    <a href="/chats" class="selected">CHAT ROOMS</a> | <a href="/account/<%=account._id%>/friends">FRIENDS</a> | 
+    <a href="/account/<%=account._id%>">MY ACCOUNT</a> | <a href="/logout">LOG OUT</a>
+</nav>
+<div class="holder">
+    <h1>Chat info</h1>
+    <form class="chat-info-form" method="POST" action="/chats/<%=chat._id%>/info?_method=PUT" autocomplete="off">
+        <h3>Chat Name:</h3>
+        <input type="text" name="name" value="<%= chat.name %>">
+        <h3>Members:</h3>
+        <div class="members-div">
+            <% Array.from(chat.members).forEach(function(m) { %>
+                <div class="member"><%=m%></div>
+            <% }) %>
+        </div>
+        <input type="submit" value="Save Changes and return" class="btn">
+    </form>
+</div>
 <%- include('../partials/header') %>

@@ -1,3 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+:root {
+    --Background0: #080808;
+    --BackgroundAccent0: #3b444b;
+    --AccentA0: #f0ece1;
+    --AccentB0: #dd4e1e;
+    --AccentC0: #e5703d;
+}
 body {
-    background-color: brown;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(var(--BackgroundAccent0), var(--Background0));
+    text-align: center;
+    font-family: 'Viga', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    margin: 10vmin 0 0 0;
+    font-size: 10vmin;
+    color: var(--AccentB0);
+}
+h2 {
+    margin: 0;
+    font-size: 6vmin;
+    color: var(--AccentC0);
+}
+h3 {
+    margin: 0;
+    font-size: 4.5vmin;
+    color: var(--AccentC0);
+}
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 40vmin;
+    width: 70vmin;
+    margin-top: 10vmin;
+}
+.create-account-form .t-display {
+    padding: 0;
+    margin-top: -2vmin;
+    width: 100%;
+    height: 5vmin;
+    text-align: center;
+    border-style: none;
+    border-radius: 1vmin;
+    font-size: 3.5vmin;
+    background-color: var(--AccentA0);
+    color: var(--Background0);
+}
+#ro {
+    background-color: transparent;
+    color: var(--AccentA0);
+    font-size: 4vmin;
+}
+#ro:focus {
+    outline: none;
+}
+.btn {
+    margin-top: 0;
+    height: 7vmin;
+    border-radius: 1vmin;
+    font-size: 3.5vmin;
+    font-family: 'Viga', sans-serif;
+    color: var(--Background0);
 }

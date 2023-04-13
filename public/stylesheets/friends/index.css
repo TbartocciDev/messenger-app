@@ -80,22 +80,3 @@ input:focus {
     color: var(--AccentA0);
     font-size: 4.5vmin;
 }
-
-.members-div {
-    background-color: rebeccapurple;
-    height: 30vh;
-    border-style: solid;
-    border-width: 0.75vmin;
-    background-color: #dd4e1e;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-
-    overflow-y: auto;
-}
-
-.member{
-    border-style: solid;
-
-}

@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+
+:root {
+  --Background0: #080808;
+  --BackgroundAccent0: #3b444b;
+  --AccentA0: #f0ece1;
+  --AccentB0: #dd4e1e;
+  --AccentC0: #e5703d;
+}
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--AccentC0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.title {
+  height: 60vmin;
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  text-align: center;
+  font-family: 'Viga', sans-serif;
+  font-size: 20vmin;
+
+  color: var(--Background0);
+}
+.login-btn {
+  margin-top: 10vh;
+  height: 15vmin;
+  width: 60vmin;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--BackgroundAccent0);
+  border-style: solid;
+  border-color: var(--AccentB0);
+  border-radius: 3vmin;
+  border-width: 0.75vmin;
+}
+a p {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-size: 4.5vmin;
+  color: var(--AccentA0);
+}
+a {
+  border-radius: 3vmin;
+  height: 100%;
+  width: 100%;
+}
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+a:hover {
+  background-color: rgb(166, 166, 99);
+}
+
+@media screen and (orientation: portrait) {
+  .title {
+    /* background-color: rgb(51, 117, 153); */
+    height: 60vmin;
+    width: 90vmin;
+  }
+  .login-btn {
+    width: 70vmin;
+  }
+
+  p {
+    font-size: 18vmin;
+  }
+
+  a p {
+    font-size: 4.5vmin;
+  }
+
+  
+}

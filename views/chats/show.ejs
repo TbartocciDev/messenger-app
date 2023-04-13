@@ -1,23 +1,41 @@
 <%- include('../partials/header') %>
     <link rel='stylesheet' href='/stylesheets/chats/show.css' class="page-style" />
-        <nav class="nav-bar">
-            <a href="/logout">LOG OUT</a> | <a href="">Chat Info</a>
-        </nav>
+    <nav class="nav-bar">
+        <a href="/chats" class="selected">CHAT ROOMS</a> | <a href="/account/<%=account._id%>/friends">FRIENDS</a> | 
+        <a href="/account/<%=account._id%>">MY ACCOUNT</a> | <a href="/logout">LOG OUT</a>
+    </nav>
+    <div class="holder">
         <h1><%= chat.name %></h1>
-        <a href="/chats">Return to chats</a>
-        <br><br>
-        <% chat.messages.forEach(function(m) { %>
-            <% if (m.senderId === account.googleId) { %>
-                <h3 class="user-message"><%=m.text%> ~ <%=account.displayName%></h3>
-            <% } else { %>
-                <h3 class="other-message"><%=m.text%> ~ <%=account.displayName%></h3>
-            <% } %>
-        <% }) %>
-        <form class="create-message" method="POST" action="/chats/<%= chat._id %>/messages">
-            <label>New Message:</label>
-            <input type="text" name="text">
-            <br>
-            <input type="submit" value="Send Message">
-        </form>
-    <script src="javascripts/chats/show.js" type="text/javascript"></script>
+        <a href="<%=chat._id%>/info" class="info"> Chat Info</a>
+        <div class="messages-holder" background-color="'black">
+            <% chat.messages.forEach(function(m) { %>
+                <% let userName = '' %>
+                <% accounts.forEach(function(a) { %>
+                    <% if (a.googleId === m.senderId) { %>
+                        <% userName = a.displayName %>
+                    <% } %>
+                <% }) %>
+                <% if (m.senderId === account.googleId) { %>
+                    <div class="message-holder" id="user-message">
+                        <div class="user-message" id="message">
+                            <p class="user-self"><%=userName%></p>
+                            <p class="message"><%=m.text%></p>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="message-holder" id="other-message">
+                        <div class="other-message" id="message">
+                            <p class="user"><%=userName%></p>
+                            <p class="message"><%=m.text%></p>
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        </div>
+    </div>
+    <form class="create-message-form" method="POST" action="/chats/<%= chat._id %>/messages" autocomplete="off">
+        <input type="text" name="text" class="text-field" placeholder="Enter message here..." required>
+        <input type="submit" value="Send Message">
+    </form>
+    <script src="/javascripts/chats/show.js" type="text/javascript"></script>
 <%- include('../partials/footer') %>

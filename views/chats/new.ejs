@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+New Chat
+<% let chatMembers = [] %>
+<form class="create-chat" method="POST" action="/chats">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <br>
+    <label>Members:</label>
+    <% chatMembers.forEach(function(m) { %>
+        <h3><%= m %></h3>
+    <% }) %>
+    <textarea name="members-string"></textarea>
+    <br>
+    <input type="submit" value="Create Chat">
+</form>
+<%- include('../partials/footer') %>

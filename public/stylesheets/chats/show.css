@@ -1,23 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+:root {
+    --Background0: #080808;
+    --BackgroundAccent0: #3b444b;
+    --AccentA0: #f0ece1;
+    --AccentB0: #dd4e1e;
+    --AccentC0: #e5703d;
+}
 body {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: rgb(195, 207, 116);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  margin: 0;
+  height: 100vh;
+  height: 100vw;
+  background-color: var(--AccentC0);
+  font-family: 'Viga', sans-serif;
 
-  .google-logo {
-    height: 30px;
-    aspect-ratio: 1/1;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 8vmin;
+  background-color: #3b444b;
+  color: var(--AccentB0);
+  font-size: 6vmin;
+  border-bottom: 1vmin solid var(--Background0);
+}
+a {
+  color: var(--AccentA0);
+  width: 100%;
+  text-align: center;
+  font-size: 4vmin;
+}
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
 
-  .user-message {
-    color: blue;
-  }
+.holder {
+  width: 80%;
+  margin-top: 4vmin;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.messages-holder {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  overflow-y: auto;
+  border-style: solid;
+  border-color: var(--Background0);
+  background-color: var(--BackgroundAccent0);
+}
+h1 {
+  margin: 0;
+  font-size: 7vmin;
+  color: var(--Background0);
+}
+.message-holder {
+  width: 100%;
+}
+#message {
+  width: auto;
+  border-radius: 1vmin;
+  margin: 1vmin ;
+}
+#other-message {
+  display: flex;
+  justify-content: left;
+}
+#user-message {
+  display: flex;
+  justify-content: right;
+}
+.user-message {
+  background-color: var(--AccentA0);
+  max-width: 70%;
+}
+.other-message {
+  background-color: var(--AccentA0);
+  max-width: 70%;
+}
+
+.user {
+  color: var(--BackgroundAccent0);
+  margin: 0;
+  margin: 1vmin 1vmin 1vmin 1vmin;
+}
+.user-self {
+  color: var(--AccentB0);
+  margin: 0;
+  margin: 1vmin 1vmin 1vmin 1vmin;
+}
+.message{
+  color: var(--Background0);
+  margin: 0 0 1vmin 1vmin;
   
-  .other-message {
-    color: maroon;
-  }
+}
+.info {
+  text-align: right;
+  text-decoration: underline;
+  width: auto;
+}
+.info:link, .info:visited, .info:active {
+  text-decoration: underline;
+}
+
+.selected {
+  color: var(--AccentC0);
+}
+.create-message-form{
+  width: 80%;
+  margin-top: -10vmin;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  height: 4.5vmin;
+  margin: 0 0 0 1vmin;
+  width: 20%;
+  font-size: 3vmin;
+}
+.text-field{
+  word-wrap: break-word;
+  word-break: break-all;
+  min-height: 5vmin;
+  width: 80%;
+  border: none;
+  padding: 0;
+  margin: 0;
+}

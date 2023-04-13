@@ -6,9 +6,14 @@ const checkForAccount = require('../config/checkForAccount');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/new', ensureLoggedIn, accountCtrl.new)
-router.get('/:id', ensureLoggedIn, accountCtrl.show)
-router.get('/:id', ensureLoggedIn, accountCtrl.edit)
-router.post('/', ensureLoggedIn, accountCtrl.create)
 router.put('/:id', ensureLoggedIn, accountCtrl.update)
+
+router.post('/new', ensureLoggedIn, accountCtrl.create)
+router.get('/:id', ensureLoggedIn, accountCtrl.edit)
+router.get('/:id', ensureLoggedIn, accountCtrl.show)
+router.get('/:id/friends', ensureLoggedIn, accountCtrl.showFriends)
+router.get('/:id/friends/new', ensureLoggedIn, accountCtrl.newFriend)
+
+
 
 module.exports = router
