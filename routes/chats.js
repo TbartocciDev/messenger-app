@@ -13,6 +13,7 @@ router.get('/:id/info', ensureLoggedIn, chatsCtrl.info)
 
 router.get('/:id/info', ensureLoggedIn, chatsCtrl.edit)
 router.post('/', ensureLoggedIn, chatsCtrl.create)
+router.post('/new', ensureLoggedIn, chatsCtrl.addMember)
 router.put('/:id/info', ensureLoggedIn, chatsCtrl.update)
 
 module.exports = router;

@@ -9,6 +9,7 @@ async function create(req,res) {
     const chat = await Chat.findById(req.params.id)
 
     req.body.senderId = req.user.googleId
+    console.log(req.body)
     chat.messages.push(req.body)
     
     try {

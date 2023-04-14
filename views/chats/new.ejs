@@ -1,16 +1,26 @@
 <%- include('../partials/header') %>
-New Chat
-<% let chatMembers = [] %>
-<form class="create-chat" method="POST" action="/chats">
-    <label>Name:</label>
-    <input type="text" name="name">
-    <br>
-    <label>Members:</label>
-    <% chatMembers.forEach(function(m) { %>
-        <h3><%= m %></h3>
-    <% }) %>
-    <textarea name="members-string"></textarea>
-    <br>
-    <input type="submit" value="Create Chat">
-</form>
+<link rel='stylesheet' href='/stylesheets/chats/new.css' class="page-style" />
+<nav class="nav-bar">
+    <a href="/chats" class="selected">CHAT ROOMS</a> | <a href="/account/<%=account._id%>/friends">FRIENDS</a> | 
+    <a href="/account/<%=account._id%>">MY ACCOUNT</a> | <a href="/logout">LOG OUT</a>
+</nav>
+<div class="holder">
+    <h1>Create Chat</h1>
+    <h3>Members:</h3>
+        <div class="members-div">
+        <% Array.from(members).forEach(function(m) { %>
+            <h2 class="member"><%= m.displayName %></h2>
+        <% }) %>
+        </div>
+        <form class="add-member-form" method="POST" action="/chats/new" autocomplete="off">
+            <input class="user-id" type="text" placeholder="Enter another user Id" name="member" autocomplete="off">
+            <input class="add-member-btn" type="submit" value="Add Member">
+        </form>
+    <form class="create-chat" method="POST" action="/chats" autocomplete="off">
+        <h3>Name:</h3>
+        <input type="text" name="name" required autocomplete="off">
+        <input type="submit" value="Create Chat">
+    </form>
+      
+</div>
 <%- include('../partials/footer') %>

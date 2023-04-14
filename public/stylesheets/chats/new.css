@@ -37,22 +37,32 @@ a {
 a:link, a:visited, a:active {
   text-decoration: none;
 }
+
+.holder {
+  width: 80%;
+  margin-top: 4vmin;
+}
+.messages-holder {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  overflow-y: auto;
+  border-style: solid;
+  border-color: var(--Background0);
+  background-color: var(--BackgroundAccent0);
+}
+
 .selected {
     color: var(--AccentC0);
 }
-.holder {
-    width: 80%;
-    margin-top: 4vmin;
-}
 h1 {
-    margin: 0;
-    font-size: 7vmin;
-    color: var(--Background0);
+  margin: 0;
+  font-size: 7vmin;
+  color: var(--Background0);
 }
 h2 {
   margin: 0;
-  font-size: 5.5vmin;
-  color: var(--BackgroundAccent0);
 }
 h3 {
     margin: 0;
@@ -60,22 +70,7 @@ h3 {
     font-size: 5vmin;
     color: var(--BackgroundAccent0);
 }
-.friends-holder {
-  height: 50vmin;
-}
-.friends {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  flex-direction: column;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
 
-  overflow-y: auto;
-}
-.find-friend {
-  margin: 0;
-}
 input {
     padding: 0;
     width: 60%;
@@ -102,21 +97,27 @@ input:focus {
     font-size: 4.5vmin;
 }
 
-.friend {
-  border-style: solid;
+.members-div {
+  background-color: rebeccapurple;
+  height: 30vmin;
   display: grid;
-  grid-template-columns: 80% 20%;
-  background-color: var(--AccentB0);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  overflow-y: auto;
 }
 
-.x-btn {
-  margin: 0.5vmin 0.5vmin 0 0;
-  width: 70%;
-  aspect-ratio: 1/1;
-  border-radius: 1vmin;
-  background-color: red;
+.member {
+  border-style: solid;
 }
 
-.hidden {
-  width: 0%;
+.add-member-form {
+  width: 60%;
+}
+.user-id {
+  width: 69%;
+}
+
+.add-member-btn {
+  width: 30%;
 }

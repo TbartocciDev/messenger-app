@@ -8,7 +8,7 @@
     <h1>Chat info</h1>
     <form class="chat-info-form" method="POST" action="/chats/<%=chat._id%>/info?_method=PUT" autocomplete="off">
         <h3>Chat Name:</h3>
-        <input type="text" name="name" value="<%= chat.name %>">
+        <input type="text" name="name" value="<%= chat.name %>" autocomplete="off">
         <h3>Members:</h3>
         <div class="members-div">
             <% Array.from(chat.members).forEach(function(m) { %>

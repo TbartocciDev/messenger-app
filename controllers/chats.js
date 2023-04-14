@@ -9,7 +9,8 @@ module.exports = {
   edit,
   update,
   new: newChat,
-  create: createChat
+  create: createChat,
+  addMember
 };
 
 async function index(req,res) {
@@ -36,8 +37,9 @@ async function info(req,res) {
   const accounts = await Account.find({})
   const account =  await Account.findOne({googleId: req.user.googleId})
   const chat = await Chat.findById(req.params.id)
+  console.log(chat.members[0].googleId)
 
-  res.render('chats/info', {account,chat, accounts})
+  res.render('chats/info', {account,chat,accounts})
 }
 
 async function edit(req,res) {
@@ -52,14 +54,31 @@ async function update(req,res) {
   res.redirect(`/chats/${req.params.id}`)
 }
 
+let members = []
 async function newChat(req,res) {
   const account =  await Account.findOne({googleId: req.user.googleId})
+  members = []
+  members.push(account)
 
-  res.render('chats/new', {account})
+  res.render('chats/new', {account, members})
 }
 
 async function createChat(req,res) {
-  console.log(req.body)
+  const accounts = await Account.find({})
+  const account =  await Account.findOne({googleId: req.user.googleId})
+  req.body.members = members
 
-  
+  try {
+    await Chat.create(req.body);
+  } catch (err) {
+    console.log(err);
+  }
+  res.redirect('/chats')
+}
+
+async function addMember(req,res) {
+  const account =  await Account.findOne({userId: req.body.member})
+  members.push(account)
+
+  res.render('chats/new', {account, members})
 }

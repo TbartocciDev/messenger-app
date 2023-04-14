@@ -14,15 +14,29 @@
                 <div class="chat">
                     <a href="chats/<%=chat._id%>" class="chat-link">
                         <div class="chat-name"><%= chat.name %>:</div>
-                        <%let lastMessage = chat.messages.slice(-1)%>
-                        <div class="date"><%= lastMessage[0].createdAt.toLocaleDateString()  %></div>
+                        <% let lastMessage = null %>
+                        <% let date = null %>
+                        <% let sender = null %>
+                        <% let messText = null %>
+                        <% if (chat.messages.length > 0) { %>
+                            <% lastMessage = chat.messages.slice(-1) %>
+                            <% date = lastMessage[0].createdAt.toLocaleDateString() %>
+                            <% sender = lastMessage[0].senderId%>
+                            <% messText = lastMessage[0].text%>
+                        <% } else { %>
+                            <% lastMessage = '' %>
+                            <% date = '' %>
+                            <% sender = '' %>
+                            <% messText = 'No Messages yet, start the conversation!' %>
+                        <% } %>
+                        <div class="date"><%= date %></div>
                         <p class="sender">
                             <% Array.from(accounts).forEach(function(a) { %>
-                                <% if (a.googleId === lastMessage[0].senderId) { %>
+                                <% if (a.googleId === sender) { %>
                                     <%= a.displayName%>: 
                                 <% } %>
                             <% }) %>
-                            <%= lastMessage[0].text %>
+                            <%= messText %>
                         </p>
                     </a>
                 </div>

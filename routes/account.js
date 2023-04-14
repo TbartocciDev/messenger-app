@@ -12,7 +12,6 @@ router.post('/new', ensureLoggedIn, accountCtrl.create)
 router.get('/:id', ensureLoggedIn, accountCtrl.edit)
 router.get('/:id', ensureLoggedIn, accountCtrl.show)
 router.get('/:id/friends', ensureLoggedIn, accountCtrl.showFriends)
-router.get('/:id/friends/new', ensureLoggedIn, accountCtrl.newFriend)
 
 
 

@@ -40,6 +40,7 @@ a:link, a:visited, a:active {
 
 .holder {
   width: 80%;
+  height: 80vh;
   margin-top: 4vmin;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -48,7 +49,7 @@ a:link, a:visited, a:active {
   grid-column: span 2;
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 45vh;
   overflow-y: auto;
   border-style: solid;
   border-color: var(--Background0);

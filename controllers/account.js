@@ -6,8 +6,7 @@ module.exports = {
     show,
     edit,
     update,
-    showFriends,
-    newFriend
+    showFriends
 }
 
 async function create(req,res) {
@@ -51,14 +50,9 @@ async function update(req,res) {
 async function showFriends(req,res) {
     const accounts = await Account.find({})
     const account = await Account.findOne({googleId: req.user.googleId})
+    const friends = account.friends
 
-    res.render('friends/index', {account, accounts})
-}
-
-async function newFriend(req,res) {
-    const account = await Account.findOne({googleId: req.user.googleId})
-
-    res.render('friends/new', {account})
+    res.render('friends/index', {account, accounts, friends})
 }
 
 async function generateUserCode() {

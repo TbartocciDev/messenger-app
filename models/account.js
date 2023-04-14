@@ -12,8 +12,8 @@ const friendSchema = new Schema({
     },
     displayName: {
         type: String,
-        required: true,
-    },
+        required: true
+    }
 },{
     timestamps: true
 })
